@@ -6,20 +6,153 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>845</width>
+    <height>611</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <property name="layoutDirection">
+   <enum>Qt::LayoutDirection::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>801</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>400</y>
+      <width>791</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit{
+font-size: 20px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>370</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+font-size: 20px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Enter text to encode/decode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>330</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+font-size: 20px;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>330</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+font-size: 20px;
+}</string>
+    </property>
+    <property name="text">
+     <string>&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>500</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DECODE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>500</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ENCODE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>441</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+ font-size:30px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Simple Substitution Cipher</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>845</width>
      <height>22</height>
     </rect>
    </property>
