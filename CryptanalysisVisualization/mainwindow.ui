@@ -26,6 +26,27 @@
       <height>271</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="backgroundBrush">
+     <brush brushstyle="SolidPattern">
+      <color alpha="255">
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </brush>
+    </property>
+    <property name="foregroundBrush">
+     <brush brushstyle="SolidPattern">
+      <color alpha="0">
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </brush>
+    </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
@@ -42,7 +63,7 @@ font-size: 20px;
 }</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_enter">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -60,7 +81,7 @@ font-size: 20px;
      <string>Enter text to encode/decode</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_left">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -81,7 +102,7 @@ font-size: 20px;
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_right">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -102,7 +123,7 @@ font-size: 20px;
      <string>&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_decode">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -115,7 +136,7 @@ font-size: 20px;
      <string>DECODE</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="pushButton_encode">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -128,7 +149,7 @@ font-size: 20px;
      <string>ENCODE</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
       <x>230</x>
