@@ -3,33 +3,60 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+    , ui(new Ui::MainWindow){
     ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow(){
     delete ui;
 }
 
-void MainWindow::on_pushButton_decode_clicked()
-{
-
+void MainWindow::setFlipCounter(int flipCounter){
+    this->flipCounter=0;
+    if(flipCounter>0)
+        this->ui->pushButton_right->setEnabled(true);
 }
 
-//goal for today is to just show entered text on screen in Graphics view
-void MainWindow::on_pushButton_encode_clicked()
-{
+void MainWindow::on_pushButton_decode_clicked(){
     QString text = ui->textEdit->toPlainText();
+    this->state = new State(text.toStdString(), false);
+//open a dialog window
     QGraphicsView *view = ui->graphicsView;
-
     QGraphicsScene *scene= new QGraphicsScene();
     view->setScene(scene);
-
-    QGraphicsTextItem *graphicsText = new QGraphicsTextItem(text);
+    graphicsText = new QGraphicsTextItem(text);
     graphicsText->setFont(QFont("Times", 20, QFont::Bold));
     graphicsText->setTextWidth(view->width());
     scene->addItem(graphicsText);
+}
+
+void MainWindow::on_pushButton_encode_clicked(){
+    QString text = ui->textEdit->toPlainText();
+    this->state = new State(text.toStdString(), true);
+    this->setFlipCounter(this->state->distinctChars.size());
+//open a dialog window
+    QGraphicsView *view = ui->graphicsView;
+    QGraphicsScene *scene= new QGraphicsScene();
+    view->setScene(scene);
+    graphicsText = new QGraphicsTextItem(text);
+    graphicsText->setFont(QFont("Times", 20, QFont::Bold));
+    graphicsText->setTextWidth(view->width());
+    scene->addItem(graphicsText);
+}
+
+
+void MainWindow::on_pushButton_right_clicked()
+{
+    this->flipCounter++;
+    if(this->flipCounter >= this->state->distinctChars.size()) this->ui->pushButton_right->setEnabled(false);
+    if(this->flipCounter > 0) this->ui->pushButton_left->setEnabled(true);
+}
+
+
+void MainWindow::on_pushButton_left_clicked()
+{
+    this->flipCounter--;
+    if(this->flipCounter==0) this->ui->pushButton_left->setEnabled(false);
+    if(this->flipCounter < this->state->distinctChars.size()) this->ui->pushButton_right->setEnabled(true);
 }
 

@@ -6,6 +6,8 @@
 #include<QGraphicsScene>
 #include<QGraphicsTextItem>
 
+#include "state.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -19,13 +21,22 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    State* state;
+    QGraphicsTextItem *graphicsText;
+    void setFlipCounter(int flipCounter);
+    int getFlipCounter();
 
 private slots:
     void on_pushButton_decode_clicked();
 
     void on_pushButton_encode_clicked();
 
+    void on_pushButton_right_clicked();
+
+    void on_pushButton_left_clicked();
+
 private:
+    int flipCounter;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
