@@ -5,6 +5,15 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow){
     ui->setupUi(this);
+
+    view = ui->graphicsView;
+    scene= new QGraphicsScene();
+
+
+    view->setScene(scene);
+    graphicsText = new QGraphicsTextItem();
+
+    scene->addItem(graphicsText);
 }
 
 MainWindow::~MainWindow(){
@@ -21,13 +30,9 @@ void MainWindow::on_pushButton_decode_clicked(){
     QString text = ui->textEdit->toPlainText();
     this->state = new State(text.toStdString(), false);
 //open a dialog window
-    QGraphicsView *view = ui->graphicsView;
-    QGraphicsScene *scene= new QGraphicsScene();
-    view->setScene(scene);
-    graphicsText = new QGraphicsTextItem(text);
+    graphicsText->setPlainText(text);
     graphicsText->setFont(QFont("Times", 20, QFont::Bold));
     graphicsText->setTextWidth(view->width());
-    scene->addItem(graphicsText);
 }
 
 void MainWindow::on_pushButton_encode_clicked(){
@@ -35,13 +40,9 @@ void MainWindow::on_pushButton_encode_clicked(){
     this->state = new State(text.toStdString(), true);
     this->setFlipCounter(this->state->distinctChars.size());
 //open a dialog window
-    QGraphicsView *view = ui->graphicsView;
-    QGraphicsScene *scene= new QGraphicsScene();
-    view->setScene(scene);
-    graphicsText = new QGraphicsTextItem(text);
+    graphicsText->setPlainText(text);
     graphicsText->setFont(QFont("Times", 20, QFont::Bold));
     graphicsText->setTextWidth(view->width());
-    scene->addItem(graphicsText);
 }
 
 

@@ -23,6 +23,8 @@ public:
     ~MainWindow();
     State* state;
     QGraphicsTextItem *graphicsText;
+    QGraphicsView *view;
+    QGraphicsScene *scene;
     void setFlipCounter(int flipCounter);
     int getFlipCounter();
 
