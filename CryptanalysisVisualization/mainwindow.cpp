@@ -6,6 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow){
     ui->setupUi(this);
 
+
+    ui->pushButton_right->setEnabled(false);
+    ui->pushButton_left->setEnabled(false);
+
     view = ui->graphicsView;
     scene= new QGraphicsScene();
 
@@ -60,4 +64,3 @@ void MainWindow::on_pushButton_left_clicked()
     if(this->flipCounter==0) this->ui->pushButton_left->setEnabled(false);
     if(this->flipCounter < this->state->distinctChars.size()) this->ui->pushButton_right->setEnabled(true);
 }
-
