@@ -71,7 +71,7 @@ void MainWindow::on_pushButton_right_clicked()
     }
 
     graphicsText->setHtml(coloredText);
-    if(this->flipCounter >= this->state->distinctChars.size()) this->ui->pushButton_right->setEnabled(false);
+    if(this->flipCounter >= this->state->distinctChars.size()+1) this->ui->pushButton_right->setEnabled(false);
     if(this->flipCounter > 0) this->ui->pushButton_left->setEnabled(true);
 }
 

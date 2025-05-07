@@ -40,6 +40,7 @@ private slots:
     void on_pushButton_left_clicked();
 
 private:
+    char* lettersSortedByCommon;
     int flipCounter;
     Ui::MainWindow *ui;
 };
