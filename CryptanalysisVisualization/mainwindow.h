@@ -5,6 +5,8 @@
 #include<QGraphicsView>
 #include<QGraphicsScene>
 #include<QGraphicsTextItem>
+#include <bits/stdc++.h>
+using namespace std;
 
 #include "state.h"
 

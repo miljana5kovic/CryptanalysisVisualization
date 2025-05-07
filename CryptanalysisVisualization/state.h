@@ -9,7 +9,8 @@ private:
     bool isEncode;//weather it is encode or decode
 
 public:
-    unordered_set<char> distinctChars;
+    map<char, int> distinctChars;
+    map<int, char> pointerToChar;
     State();
     State(string text, bool isEncode);
 };

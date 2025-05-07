@@ -53,14 +53,50 @@ void MainWindow::on_pushButton_encode_clicked(){
 void MainWindow::on_pushButton_right_clicked()
 {
     this->flipCounter++;
+    QString text = ui->textEdit->toPlainText();
+    QString coloredText;
+    char current = this->state->pointerToChar[flipCounter-1];
+
+    for(int i = 0; i< text.length(); i++){
+        QString letter = text[i];
+        char currentLetter = letter.toLower().toStdString().c_str()[0];
+        QString color = "red";
+        QString color1 = "green";
+        if(letter.toLower() == current)
+            coloredText += QString("<span style='color:%1;'>%2</span>").arg(color, letter);
+        else if(this->state->distinctChars[currentLetter] < this->flipCounter)
+            coloredText += QString("<span style='color:%1;'>%2</span>").arg(color1, letter);
+        else
+            coloredText += QString("<span>%1</span>").arg(letter);
+    }
+
+    graphicsText->setHtml(coloredText);
     if(this->flipCounter >= this->state->distinctChars.size()) this->ui->pushButton_right->setEnabled(false);
     if(this->flipCounter > 0) this->ui->pushButton_left->setEnabled(true);
 }
 
 
-void MainWindow::on_pushButton_left_clicked()
+void MainWindow::on_pushButton_left_clicked()//make this be in same function
 {
     this->flipCounter--;
+    QString text = ui->textEdit->toPlainText();
+    QString coloredText;
+    char current = this->state->pointerToChar[flipCounter-1];
+
+    for(int i = 0; i< text.length(); i++){
+        QString letter = text[i];
+        char currentLetter = letter.toLower().toStdString().c_str()[0];
+        QString color = "red";
+        QString color1 = "green";
+        if(letter.toLower() == current)
+            coloredText += QString("<span style='color:%1;'>%2</span>").arg(color, letter);
+        else if(this->state->distinctChars[currentLetter] < this->flipCounter)
+            coloredText += QString("<span style='color:%1;'>%2</span>").arg(color1, letter);
+        else
+            coloredText += QString("<span>%1</span>").arg(letter);
+    }
+
+    graphicsText->setHtml(coloredText);
     if(this->flipCounter==0) this->ui->pushButton_left->setEnabled(false);
     if(this->flipCounter < this->state->distinctChars.size()) this->ui->pushButton_right->setEnabled(true);
 }
