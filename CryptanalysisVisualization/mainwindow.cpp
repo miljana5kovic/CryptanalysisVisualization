@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "decodedialog.h"
 #include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -40,15 +41,16 @@ void MainWindow::on_pushButton_decode_clicked(){
 }
 
 void MainWindow::on_pushButton_encode_clicked(){
-    QString text = ui->textEdit->toPlainText();
-    this->state = new State(text.toStdString(), true);
-    this->setFlipCounter(this->state->distinctChars.size());
-//open a dialog window
-    graphicsText->setPlainText(text);
-    graphicsText->setFont(QFont("Times", 20, QFont::Bold));
-    graphicsText->setTextWidth(view->width());
+    EncodeDialog dialog = new EncodeDialog();
+    dialog.exec();
+//     QString text = ui->textEdit->toPlainText();
+//     this->state = new State(text.toStdString(), true);
+//     this->setFlipCounter(this->state->distinctChars.size());
+// //open a dialog window
+//     graphicsText->setPlainText(text);
+//     graphicsText->setFont(QFont("Times", 20, QFont::Bold));
+//     graphicsText->setTextWidth(view->width());
 }
-
 
 void MainWindow::on_pushButton_right_clicked()
 {
@@ -74,7 +76,6 @@ void MainWindow::on_pushButton_right_clicked()
     if(this->flipCounter >= this->state->distinctChars.size()+1) this->ui->pushButton_right->setEnabled(false);
     if(this->flipCounter > 0) this->ui->pushButton_left->setEnabled(true);
 }
-
 
 void MainWindow::on_pushButton_left_clicked()//make this be in same function
 {

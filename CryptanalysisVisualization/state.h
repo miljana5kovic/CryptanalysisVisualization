@@ -11,6 +11,8 @@ private:
 public:
     map<char, int> distinctChars;
     map<int, char> pointerToChar;
+
+    map<char, char> letterMappings;
     State();
     State(string text, bool isEncode);
 };
