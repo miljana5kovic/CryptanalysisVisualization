@@ -41,7 +41,7 @@ void MainWindow::on_pushButton_decode_clicked(){
 }
 
 void MainWindow::on_pushButton_encode_clicked(){
-    EncodeDialog dialog = new EncodeDialog();
+    DecodeDialog dialog = new DecodeDialog();
     dialog.exec();
 //     QString text = ui->textEdit->toPlainText();
 //     this->state = new State(text.toStdString(), true);

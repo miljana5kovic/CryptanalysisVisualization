@@ -3,13 +3,13 @@
 
 #include <QtWidgets/QDialog>
 
-class EncodeDialog : public QDialog
+class DecodeDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    EncodeDialog(QWidget *parent = 0);
-    ~EncodeDialog();
+    DecodeDialog(QWidget *parent = 0);
+    ~DecodeDialog();
 };
 
 #endif // DECODEDIALOG_H
