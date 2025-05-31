@@ -1,10 +1,15 @@
 #ifndef ENCODEDIALOG_H
 #define ENCODEDIALOG_H
 
-class EncodeDialog
+#include <QtWidgets/QDialog>
+
+class EncodeDialog : public QDialog
 {
+    Q_OBJECT
+
 public:
-    EncodeDialog();
+    EncodeDialog(QWidget *parent = 0);
+    ~EncodeDialog();
 };
 
 #endif // ENCODEDIALOG_H

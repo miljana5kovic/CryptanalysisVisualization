@@ -1,3 +1,10 @@
 #include "encodedialog.h"
 
-EncodeDialog::EncodeDialog() {}
+EncodeDialog::EncodeDialog(QWidget *parent)
+    : QDialog(parent)
+{
+}
+
+EncodeDialog::~EncodeDialog()
+{ }
+
